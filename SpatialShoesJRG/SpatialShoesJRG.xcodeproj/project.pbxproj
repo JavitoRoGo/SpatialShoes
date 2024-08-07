@@ -1,0 +1,413 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4424C8172C642076002C973A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4424C8102C642075002C973A /* Preview Assets.xcassets */; };
+		4424C8182C642076002C973A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4424C8122C642075002C973A /* Assets.xcassets */; };
+		4424C81A2C642076002C973A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8132C642075002C973A /* ContentView.swift */; };
+		4424C81B2C642076002C973A /* SpatialShoesJRGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8152C642075002C973A /* SpatialShoesJRGApp.swift */; };
+		4424C81E2C6420B8002C973A /* shoes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4424C81D2C6420B8002C973A /* shoes.json */; };
+		4424C8212C6425F0002C973A /* ShoeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8202C6425F0002C973A /* ShoeModel.swift */; };
+		4424C8242C642890002C973A /* JSONInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8232C64288A002C973A /* JSONInteractor.swift */; };
+		4424C8262C64295A002C973A /* ShoeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8252C64295A002C973A /* ShoeInteractor.swift */; };
+		4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8282C642ABD002C973A /* ShoesVM.swift */; };
+		4424C82B2C642E2B002C973A /* shoesTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4424C82A2C642E2B002C973A /* shoesTest.json */; };
+		4424C82D2C642E58002C973A /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C82C2C642E52002C973A /* DataTest.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4424C7F92C641EFF002C973A /* SpatialShoesJRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialShoesJRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4424C8102C642075002C973A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4424C8122C642075002C973A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4424C8132C642075002C973A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4424C8142C642075002C973A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4424C8152C642075002C973A /* SpatialShoesJRGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialShoesJRGApp.swift; sourceTree = "<group>"; };
+		4424C81D2C6420B8002C973A /* shoes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shoes.json; sourceTree = "<group>"; };
+		4424C8202C6425F0002C973A /* ShoeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeModel.swift; sourceTree = "<group>"; };
+		4424C8232C64288A002C973A /* JSONInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONInteractor.swift; sourceTree = "<group>"; };
+		4424C8252C64295A002C973A /* ShoeInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeInteractor.swift; sourceTree = "<group>"; };
+		4424C8282C642ABD002C973A /* ShoesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesVM.swift; sourceTree = "<group>"; };
+		4424C82A2C642E2B002C973A /* shoesTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shoesTest.json; sourceTree = "<group>"; };
+		4424C82C2C642E52002C973A /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4424C7F62C641EFF002C973A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4424C7F02C641EFF002C973A = {
+			isa = PBXGroup;
+			children = (
+				4424C8162C642075002C973A /* SpatialShoesJRG */,
+				4424C7FC2C641EFF002C973A /* Packages */,
+				4424C7FA2C641EFF002C973A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4424C7FA2C641EFF002C973A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4424C7F92C641EFF002C973A /* SpatialShoesJRG.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4424C7FC2C641EFF002C973A /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
+		4424C8112C642075002C973A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4424C82C2C642E52002C973A /* DataTest.swift */,
+				4424C82A2C642E2B002C973A /* shoesTest.json */,
+				4424C8102C642075002C973A /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4424C8162C642075002C973A /* SpatialShoesJRG */ = {
+			isa = PBXGroup;
+			children = (
+				4424C8152C642075002C973A /* SpatialShoesJRGApp.swift */,
+				4424C8132C642075002C973A /* ContentView.swift */,
+				4424C8272C642AAC002C973A /* ViewModel */,
+				4424C8222C64287B002C973A /* Interactor */,
+				4424C81F2C6425D9002C973A /* Model */,
+				4424C81C2C64209C002C973A /* Resources */,
+				4424C8112C642075002C973A /* Preview Content */,
+				4424C8122C642075002C973A /* Assets.xcassets */,
+				4424C8142C642075002C973A /* Info.plist */,
+			);
+			path = SpatialShoesJRG;
+			sourceTree = "<group>";
+		};
+		4424C81C2C64209C002C973A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4424C81D2C6420B8002C973A /* shoes.json */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		4424C81F2C6425D9002C973A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4424C8202C6425F0002C973A /* ShoeModel.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4424C8222C64287B002C973A /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				4424C8232C64288A002C973A /* JSONInteractor.swift */,
+				4424C8252C64295A002C973A /* ShoeInteractor.swift */,
+			);
+			name = Interactor;
+			sourceTree = "<group>";
+		};
+		4424C8272C642AAC002C973A /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				4424C8282C642ABD002C973A /* ShoesVM.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4424C7F82C641EFF002C973A /* SpatialShoesJRG */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4424C80B2C641F01002C973A /* Build configuration list for PBXNativeTarget "SpatialShoesJRG" */;
+			buildPhases = (
+				4424C7F52C641EFF002C973A /* Sources */,
+				4424C7F62C641EFF002C973A /* Frameworks */,
+				4424C7F72C641EFF002C973A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpatialShoesJRG;
+			packageProductDependencies = (
+			);
+			productName = SpatialShoesJRG;
+			productReference = 4424C7F92C641EFF002C973A /* SpatialShoesJRG.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4424C7F12C641EFF002C973A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1600;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					4424C7F82C641EFF002C973A = {
+						CreatedOnToolsVersion = 16.0;
+					};
+				};
+			};
+			buildConfigurationList = 4424C7F42C641EFF002C973A /* Build configuration list for PBXProject "SpatialShoesJRG" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4424C7F02C641EFF002C973A;
+			productRefGroup = 4424C7FA2C641EFF002C973A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4424C7F82C641EFF002C973A /* SpatialShoesJRG */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4424C7F72C641EFF002C973A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4424C82B2C642E2B002C973A /* shoesTest.json in Resources */,
+				4424C8172C642076002C973A /* Preview Assets.xcassets in Resources */,
+				4424C81E2C6420B8002C973A /* shoes.json in Resources */,
+				4424C8182C642076002C973A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4424C7F52C641EFF002C973A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4424C8242C642890002C973A /* JSONInteractor.swift in Sources */,
+				4424C8212C6425F0002C973A /* ShoeModel.swift in Sources */,
+				4424C81A2C642076002C973A /* ContentView.swift in Sources */,
+				4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */,
+				4424C82D2C642E58002C973A /* DataTest.swift in Sources */,
+				4424C81B2C642076002C973A /* SpatialShoesJRGApp.swift in Sources */,
+				4424C8262C64295A002C973A /* ShoeInteractor.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		4424C80C2C641F01002C973A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SpatialShoesJRG/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JRG79.SpatialShoesJRG;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Debug;
+		};
+		4424C80D2C641F01002C973A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"SpatialShoesJRG/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "$(TARGET_NAME)/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.JRG79.SpatialShoesJRG;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 7;
+			};
+			name = Release;
+		};
+		4424C80E2C641F01002C973A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = xros;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Debug;
+		};
+		4424C80F2C641F01002C973A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = xros;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+				XROS_DEPLOYMENT_TARGET = 2.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4424C7F42C641EFF002C973A /* Build configuration list for PBXProject "SpatialShoesJRG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4424C80E2C641F01002C973A /* Debug */,
+				4424C80F2C641F01002C973A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4424C80B2C641F01002C973A /* Build configuration list for PBXNativeTarget "SpatialShoesJRG" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4424C80C2C641F01002C973A /* Debug */,
+				4424C80D2C641F01002C973A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4424C7F12C641EFF002C973A /* Project object */;
+}
