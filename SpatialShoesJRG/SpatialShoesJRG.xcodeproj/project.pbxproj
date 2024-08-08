@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4417FDBD2C65844B00F3A08D /* ShoeInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4417FDBC2C65844B00F3A08D /* ShoeInfoView.swift */; };
 		4424C8172C642076002C973A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4424C8102C642075002C973A /* Preview Assets.xcassets */; };
 		4424C8182C642076002C973A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4424C8122C642075002C973A /* Assets.xcassets */; };
-		4424C81A2C642076002C973A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8132C642075002C973A /* ContentView.swift */; };
+		4424C81A2C642076002C973A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8132C642075002C973A /* MainView.swift */; };
 		4424C81B2C642076002C973A /* SpatialShoesJRGApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8152C642075002C973A /* SpatialShoesJRGApp.swift */; };
 		4424C81E2C6420B8002C973A /* shoes.json in Resources */ = {isa = PBXBuildFile; fileRef = 4424C81D2C6420B8002C973A /* shoes.json */; };
 		4424C8212C6425F0002C973A /* ShoeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8202C6425F0002C973A /* ShoeModel.swift */; };
@@ -21,10 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4417FDBC2C65844B00F3A08D /* ShoeInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeInfoView.swift; sourceTree = "<group>"; };
 		4424C7F92C641EFF002C973A /* SpatialShoesJRG.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpatialShoesJRG.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4424C8102C642075002C973A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4424C8122C642075002C973A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4424C8132C642075002C973A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4424C8132C642075002C973A /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		4424C8142C642075002C973A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4424C8152C642075002C973A /* SpatialShoesJRGApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpatialShoesJRGApp.swift; sourceTree = "<group>"; };
 		4424C81D2C6420B8002C973A /* shoes.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shoes.json; sourceTree = "<group>"; };
@@ -85,7 +87,8 @@
 			isa = PBXGroup;
 			children = (
 				4424C8152C642075002C973A /* SpatialShoesJRGApp.swift */,
-				4424C8132C642075002C973A /* ContentView.swift */,
+				4424C8132C642075002C973A /* MainView.swift */,
+				4417FDBC2C65844B00F3A08D /* ShoeInfoView.swift */,
 				4424C8272C642AAC002C973A /* ViewModel */,
 				4424C8222C64287B002C973A /* Interactor */,
 				4424C81F2C6425D9002C973A /* Model */,
@@ -206,7 +209,8 @@
 			files = (
 				4424C8242C642890002C973A /* JSONInteractor.swift in Sources */,
 				4424C8212C6425F0002C973A /* ShoeModel.swift in Sources */,
-				4424C81A2C642076002C973A /* ContentView.swift in Sources */,
+				4424C81A2C642076002C973A /* MainView.swift in Sources */,
+				4417FDBD2C65844B00F3A08D /* ShoeInfoView.swift in Sources */,
 				4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */,
 				4424C82D2C642E58002C973A /* DataTest.swift in Sources */,
 				4424C81B2C642076002C973A /* SpatialShoesJRGApp.swift in Sources */,

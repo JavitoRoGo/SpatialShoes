@@ -25,6 +25,18 @@ struct Shoe: Codable, Identifiable, Hashable {
 	let certifications: [String]
 }
 
+extension Shoe {
+	var materialsList: String {
+		materials.formatted(.list(type: .and).locale(Locale(identifier: "es-ES")))
+	}
+	var colorsList: String {
+		colors.map {
+			$0.rawValue
+		}
+		.formatted(.list(type: .and).locale(Locale(identifier: "es-ES")))
+	}
+}
+
 enum Brand: String, Codable {
 	case athelica = "Athletica"
 	case eleganceWalk = "EleganceWalk"
