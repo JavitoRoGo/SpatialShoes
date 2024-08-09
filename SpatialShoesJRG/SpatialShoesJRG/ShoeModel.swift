@@ -35,6 +35,27 @@ extension Shoe {
 		}
 		.formatted(.list(type: .and).locale(Locale(identifier: "es-ES")))
 	}
+	
+	func toFav(isFav: Bool = false) -> FavShoe {
+		FavShoe(
+			id: id,
+			name: name,
+			brand: brand,
+			size: size,
+			price: price,
+			description: description,
+			model3DName: model3DName,
+			type: type,
+			materials: materialsList,
+			origin: origin,
+			gender: gender,
+			weight: weight,
+			colors: colorsList,
+			warranty: warranty,
+			certifications: certifications,
+			isFavorite: isFav
+		)
+	}
 }
 
 enum Brand: String, Codable {

@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct SpatialShoesJRGApp: App {
+	@State private var vm = ShoesVM()
+	
     var body: some Scene {
         WindowGroup {
             MainView()
+				.environment(vm)
         }
     }
 }

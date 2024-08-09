@@ -8,42 +8,57 @@
 import SwiftUI
 
 struct ShoeInfoView: View {
-	let selectedShoe: Shoe
+	@State var favVM = FavoriteVM()
+	let shoe: Shoe
+	@Environment(ShoesVM.self) private var vm
 	@State private var size = 0
 	
     var body: some View {
 		VStack {
-			Text(selectedShoe.name)
+			Text(shoe.name)
 				.font(.largeTitle)
 			ScrollView {
 				VStack {
-					LabeledContent("Marca", value: selectedShoe.brand.rawValue)
-					LabeledContent("Tipo", value: selectedShoe.type)
-					LabeledContent("Estilo", value: selectedShoe.gender.rawValue)
+					LabeledContent("Marca", value: shoe.brand.rawValue)
+					LabeledContent("Tipo", value: shoe.type)
+					LabeledContent("Estilo", value: shoe.gender.rawValue)
 					LabeledContent("Tallas disponibles") {
 						Picker("Tallas", selection: $size) {
-							ForEach(selectedShoe.size, id: \.self) { talla in
+							ForEach(shoe.size, id: \.self) { talla in
 								Text(talla.formatted())
 									.tag(talla)
 							}
 						}
 					}
-					LabeledContent("Colores", value: selectedShoe.colorsList)
-					LabeledContent("Materiales", value: selectedShoe.materialsList)
-					LabeledContent("Precio", value: selectedShoe.price.formatted(.currency(code: "eur")))
+					LabeledContent("Colores", value: shoe.colorsList)
+					LabeledContent("Materiales", value: shoe.materialsList)
+					LabeledContent("Precio", value: shoe.price.formatted(.currency(code: "eur")))
+					HStack {
+						Spacer()
+						Button {
+							favVM.isFavorite.toggle()
+							vm.toggleFavorite(shoe)
+						} label: {
+							Text(favVM.isFavorite ? "Eliminar de Favoritos" : "Añadir a Favoritos")
+						}
+					}
 				}
 				Divider()
 					.padding(.vertical, 25)
-				LabeledContent("Origen", value: selectedShoe.origin)
+				LabeledContent("Origen", value: shoe.origin)
 					.padding(.bottom)
-				Text(selectedShoe.description)
+				Text(shoe.description)
 					.font(.caption)
 			}
 		}
 		.padding()
+		.onChange(of: shoe, initial: true) {
+			favVM.isShoeFavorite(favs: vm.favorites, shoe: shoe)
+		}
     }
 }
 
 #Preview(windowStyle: .automatic) {
-	ShoeInfoView(selectedShoe: .preview)
+	ShoeInfoView(shoe: .preview)
+		.environment(ShoesVM(interactor: TestInteractor()))
 }

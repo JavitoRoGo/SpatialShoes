@@ -19,6 +19,9 @@
 		4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8282C642ABD002C973A /* ShoesVM.swift */; };
 		4424C82B2C642E2B002C973A /* shoesTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4424C82A2C642E2B002C973A /* shoesTest.json */; };
 		4424C82D2C642E58002C973A /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C82C2C642E52002C973A /* DataTest.swift */; };
+		44818EC62C662E8C001DB341 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818EC52C662E8C001DB341 /* GalleryView.swift */; };
+		44818EC82C663115001DB341 /* FavoriteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818EC72C663115001DB341 /* FavoriteVM.swift */; };
+		44818ECC2C6635EE001DB341 /* FavShoeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818ECB2C6635EE001DB341 /* FavShoeModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		4424C8282C642ABD002C973A /* ShoesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesVM.swift; sourceTree = "<group>"; };
 		4424C82A2C642E2B002C973A /* shoesTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shoesTest.json; sourceTree = "<group>"; };
 		4424C82C2C642E52002C973A /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
+		44818EC52C662E8C001DB341 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
+		44818EC72C663115001DB341 /* FavoriteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVM.swift; sourceTree = "<group>"; };
+		44818ECB2C6635EE001DB341 /* FavShoeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavShoeModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 			children = (
 				4424C8152C642075002C973A /* SpatialShoesJRGApp.swift */,
 				4424C8132C642075002C973A /* MainView.swift */,
+				44818EC52C662E8C001DB341 /* GalleryView.swift */,
 				4417FDBC2C65844B00F3A08D /* ShoeInfoView.swift */,
 				4424C8272C642AAC002C973A /* ViewModel */,
 				4424C8222C64287B002C973A /* Interactor */,
@@ -112,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				4424C8202C6425F0002C973A /* ShoeModel.swift */,
+				44818ECB2C6635EE001DB341 /* FavShoeModel.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -129,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				4424C8282C642ABD002C973A /* ShoesVM.swift */,
+				44818EC72C663115001DB341 /* FavoriteVM.swift */,
 			);
 			name = ViewModel;
 			sourceTree = "<group>";
@@ -210,10 +219,13 @@
 				4424C8242C642890002C973A /* JSONInteractor.swift in Sources */,
 				4424C8212C6425F0002C973A /* ShoeModel.swift in Sources */,
 				4424C81A2C642076002C973A /* MainView.swift in Sources */,
+				44818ECC2C6635EE001DB341 /* FavShoeModel.swift in Sources */,
 				4417FDBD2C65844B00F3A08D /* ShoeInfoView.swift in Sources */,
+				44818EC82C663115001DB341 /* FavoriteVM.swift in Sources */,
 				4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */,
 				4424C82D2C642E58002C973A /* DataTest.swift in Sources */,
 				4424C81B2C642076002C973A /* SpatialShoesJRGApp.swift in Sources */,
+				44818EC62C662E8C001DB341 /* GalleryView.swift in Sources */,
 				4424C8262C64295A002C973A /* ShoeInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
