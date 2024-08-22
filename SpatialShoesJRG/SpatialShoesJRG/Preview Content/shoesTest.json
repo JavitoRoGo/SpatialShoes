@@ -62,37 +62,37 @@
             "Hecho a mano"
         ]
     },
-    {
-        "id": 10345,
-        "name": "Sporty Chic",
-        "brand": "EleganceWalk",
-        "size": [
-            36,
-            37,
-            38,
-            39,
-            40
-        ],
-        "price": 89.99,
-        "description": "Descubre el estilo y la comodidad con nuestras **Sporty Chic** de **EleganceWalk**. Dise\u00f1adas para las mujeres activas que no quieren sacrificar el estilo por la funcionalidad, estas zapatillas deportivas femeninas ofrecen una combinaci\u00f3n perfecta de rendimiento y elegancia. Ideales para actividades deportivas y para el uso diario.\n\n**Caracter\u00edsticas Destacadas:**\n- **Material:** Tejidos y materiales sint\u00e9ticos de alta calidad que garantizan transpirabilidad y durabilidad.\n- **Dise\u00f1o:** Estilo moderno y femenino que se adapta a cualquier atuendo deportivo.\n- **Comodidad:** Suela ergon\u00f3mica y plantilla acolchada para un confort superior en cada paso.\n- **Versatilidad:** Perfectas para correr, entrenar o simplemente para un look deportivo casual, disponibles en varias tallas.\n\nRealza tu rendimiento y tu estilo con nuestras **Sporty Chic** y marca la diferencia en cada paso.",
-        "model3DName": "fashionSportShoe",
-        "type": "Deportivas",
-        "materials": [
-            "Sint\u00e9tico",
-            "Textil"
-        ],
-        "origin": "Estados Unidos",
-        "gender": "Unisex",
-        "weight": 0.8,
-        "colors": [
-            "Rojo",
-            "Blanco",
-            "Negro"
-        ],
-        "warranty": 2,
-        "certifications": [
-            "Materiales Reciclados",
-            "Libre de Crueldad"
-        ]
-    }
+	{
+		"id": 10456,
+		"name": "Zoom Strider",
+		"brand": "Athletica",
+		"size": [
+			40,
+			41,
+			42,
+			43,
+			44
+		],
+		"price": 109.99,
+		"description": "Experimenta la velocidad y el confort con nuestras **Zoom Strider** de **Athletica**. Dise\u00f1adas para aquellos que buscan maximizar su rendimiento deportivo sin comprometer el estilo, estas zapatillas deportivas ofrecen una tecnolog\u00eda avanzada y un dise\u00f1o innovador. Perfectas para corredores y atletas de todos los niveles.\n\n**Caracter\u00edsticas Destacadas:**\n- **Material:** Malla transpirable y materiales ligeros que proporcionan una sensaci\u00f3n de frescura y comodidad.\n- **Dise\u00f1o:** Aerodin\u00e1mico y moderno, ideal para actividades de alta intensidad.\n- **Comodidad:** Suela con amortiguaci\u00f3n avanzada y plantilla ergon\u00f3mica para un soporte \u00f3ptimo.\n- **Versatilidad:** Perfectas para correr, entrenar o simplemente para un look deportivo casual, disponibles en varias tallas.\n\nAumenta tu rendimiento y marca la diferencia con nuestras **Zoom Strider** y siente la diferencia en cada paso.",
+		"model3DName": "AirSportShoe",
+		"type": "Deportivas",
+		"materials": [
+			"Sint\u00e9tico",
+			"Textil"
+		],
+		"origin": "Alemania",
+		"gender": "Unisex",
+		"weight": 0.8,
+		"colors": [
+			"Rojo",
+			"Blanco",
+			"Negro"
+		],
+		"warranty": 2,
+		"certifications": [
+			"Certificaci\u00f3n de Calidad",
+			"Materiales Reciclados"
+		]
+	}
 ]

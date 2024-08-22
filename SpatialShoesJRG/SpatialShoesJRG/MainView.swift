@@ -18,9 +18,7 @@ struct MainView: View {
 				.tabItem {
 					Label("Galería", systemImage: "shoe")
 				}
-			List(vm.favorites) { fav in
-				Text(fav.name)
-			}
+			FavoritesView()
 				.tabItem {
 					Label("Favoritos", systemImage: "star")
 				}

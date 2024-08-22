@@ -10,11 +10,13 @@ import SwiftUI
 @main
 struct SpatialShoesJRGApp: App {
 	@State private var vm = ShoesVM()
+	@State private var favVM = FavoriteVM()
 	
     var body: some Scene {
         WindowGroup {
             MainView()
 				.environment(vm)
+				.environment(favVM)
         }
     }
 }

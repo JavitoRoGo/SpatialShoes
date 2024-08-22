@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ShoeInfoView: View {
-	@State var favVM = FavoriteVM()
+	@Environment(FavoriteVM.self) private var favVM
 	let shoe: Shoe
 	@Environment(ShoesVM.self) private var vm
 	@State private var size = 0
@@ -61,4 +61,5 @@ struct ShoeInfoView: View {
 #Preview(windowStyle: .automatic) {
 	ShoeInfoView(shoe: .preview)
 		.environment(ShoesVM(interactor: TestInteractor()))
+		.environment(FavoriteVM())
 }

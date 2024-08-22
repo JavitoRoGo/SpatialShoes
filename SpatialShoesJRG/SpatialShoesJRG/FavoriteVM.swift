@@ -11,7 +11,7 @@ import SwiftUI
 final class FavoriteVM {
 	var isFavorite: Bool = false
 	
-	func isShoeFavorite(favs: [FavShoe], shoe: Shoe) {
+	func isShoeFavorite(favs: [Shoe], shoe: Shoe) {
 		isFavorite = favs.contains(where: { $0.id == shoe.id })
 	}
 }

@@ -12,7 +12,7 @@ final class ShoesVM {
 	let interactor: DataInteractor
 	
 	var shoes: [Shoe]
-	var favorites: [FavShoe] = [] {
+	var favorites: [Shoe] = [] {
 		didSet {
 			saveFavorites()
 		}
@@ -51,8 +51,7 @@ final class ShoesVM {
 			favorites.remove(at: index)
 		} else {
 			// Add to favorites
-			let newFav = shoe.toFav(isFav: true)
-			favorites.append(newFav)
+			favorites.append(shoe)
 		}
 	}
 }
