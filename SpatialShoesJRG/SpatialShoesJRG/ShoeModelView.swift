@@ -11,37 +11,49 @@ import Shoes3D
 
 struct ShoeModelView: View {
 	let shoe: Shoe
+	@Environment(\.openWindow) private var openWindow
+	@Environment(ShoesVM.self) private var vm
 	@State private var rotateVM = RotateModelVM()
 	@Binding var rotate: Bool
 	@Binding var touch: Bool
 	
     var body: some View {
-		Model3D(named: shoe.model3DName, bundle: shoes3DBundle) { model in
-			model
-				.resizable()
-				.scaledToFit()
-				.frame(depth: 400)
-				.frame(width: 400, height: 400)
-				.scaleEffect(
-					rotateVM.applyScaleToShoe(shoe) ? 0.4 : 1.0
-				)
-				.offset(y: 50)
-				.rotation3DEffect(.degrees(rotateVM.rotationAngle), axis: (0,1,0), anchor: .center)
-				.rotation3DEffect(.degrees(Double(rotateVM.currentHRotation)), axis: (0,1,0))
-				.rotation3DEffect(.degrees(Double(rotateVM.currentVRotation)), axis: (1,0,0))
-		} placeholder: {
-			ProgressView()
+		VStack {
+			Model3D(named: shoe.model3DName, bundle: shoes3DBundle) { model in
+				model
+					.resizable()
+					.scaledToFit()
+					.frame(depth: 400)
+					.frame(width: 400, height: 400)
+					.scaleEffect(
+						rotateVM.applyScaleToShoe(shoe) ? 0.4 : 1.0
+					)
+					.offset(y: 50)
+					.rotation3DEffect(.degrees(rotateVM.rotationAngle), axis: (0,1,0), anchor: .center)
+					.rotation3DEffect(.degrees(Double(rotateVM.currentHRotation)), axis: (0,1,0))
+					.rotation3DEffect(.degrees(Double(rotateVM.currentVRotation)), axis: (1,0,0))
+			} placeholder: {
+				ProgressView()
+			}
+			.gesture(
+				DragGesture()
+					.onChanged { value in
+						rotateVM.touchingModel(value: value)
+					}
+					.onEnded { _ in
+						rotateVM.lastHorizontalDragValue = 0.0
+						rotateVM.lastVerticalDragValue = 0.0
+					}
+			)
+			.onTapGesture {
+				if !vm.showingDetail {
+					vm.showingDetail = true
+					openWindow(id: "shoeDetail")
+				}
+			}
+			
+			Text("Pulsa sobre el modelo para verlo en más detalle.")
 		}
-		.gesture(
-			DragGesture()
-				.onChanged { value in
-					rotateVM.touchingModel(value: value)
-				}
-				.onEnded { _ in
-					rotateVM.lastHorizontalDragValue = 0.0
-					rotateVM.lastVerticalDragValue = 0.0
-				}
-		)
 		.onAppear {
 			rotateVM.startRotation()
 		}
@@ -55,7 +67,8 @@ struct ShoeModelView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-	@Previewable @State var rotate = false
-	@Previewable @State var touch = true
-	ShoeModelView(shoe: .preview, rotate: $rotate, touch: $touch)
+//	@Previewable @State var rotate = false
+//	@Previewable @State var touch = true
+	ShoeModelView(shoe: .preview, rotate: .constant(true), touch: .constant(false))
+		.environment(ShoesVM(interactor: TestInteractor()))
 }

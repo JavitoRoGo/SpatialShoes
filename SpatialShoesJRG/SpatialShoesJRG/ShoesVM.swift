@@ -18,6 +18,7 @@ final class ShoesVM {
 		}
 	}
 	var selectedShoe: Shoe?
+	var showingDetail = false
 	
 	var initialAlert = false
 	@ObservationIgnored var errorMsg = ""

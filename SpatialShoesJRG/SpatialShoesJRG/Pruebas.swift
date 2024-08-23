@@ -31,6 +31,8 @@ struct Pruebas: View {
 					if let entity = scene.findEntity(named: shoe.model3DName) {
 						content.add(entity)
 						entity.scale = [0.0002, 0.0002, 0.0002]
+					} else {
+						print("No encuentra \(shoe.model3DName)")
 					}
 				} catch {
 					

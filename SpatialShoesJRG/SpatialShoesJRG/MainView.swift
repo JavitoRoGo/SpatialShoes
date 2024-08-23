@@ -32,4 +32,5 @@ struct MainView: View {
 #Preview(windowStyle: .automatic) {
 	MainView()
 		.environment(ShoesVM(interactor: TestInteractor()))
+		.environment(FavoriteVM())
 }

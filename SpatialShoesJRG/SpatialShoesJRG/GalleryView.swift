@@ -54,4 +54,5 @@ struct GalleryView: View {
 #Preview {
 	GalleryView()
 		.environment(ShoesVM(interactor: TestInteractor()))
+		.environment(FavoriteVM())
 }

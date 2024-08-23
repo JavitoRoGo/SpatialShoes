@@ -1,32 +1,12 @@
 {
-  "11F7BA23-A641-447F-9771-5257877A3EC3" : {
+  "426C55D4-8486-4B33-B530-243744F78E98" : {
     "objectMetadataList" : [
       [
-        "11F7BA23-A641-447F-9771-5257877A3EC3",
-        "Root",
-        "oldFashionSportShoes"
-      ],
-      {
-        "disallowsFraming" : false,
-        "isExpanded" : false,
-        "isLocked" : false
-      },
-      [
-        "11F7BA23-A641-447F-9771-5257877A3EC3",
+        "426C55D4-8486-4B33-B530-243744F78E98",
         "Root"
       ],
       {
         "isExpanded" : true,
-        "isLocked" : false
-      },
-      [
-        "11F7BA23-A641-447F-9771-5257877A3EC3",
-        "Root",
-        "JapaneseShoesGeta"
-      ],
-      {
-        "disallowsFraming" : false,
-        "isExpanded" : false,
         "isLocked" : false
       }
     ]

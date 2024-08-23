@@ -18,5 +18,12 @@ struct SpatialShoesJRGApp: App {
 				.environment(vm)
 				.environment(favVM)
         }
+		
+		WindowGroup(id: "shoeDetail") {
+			ShoeVolumeView()
+				.environment(vm)
+		}
+		.windowStyle(.volumetric)
+		.defaultSize(width: 0.5, height: 0.5, depth: 0.5, in: .meters)
     }
 }

@@ -17,6 +17,8 @@ struct FavoritesView: View {
 	let columns = [GridItem(.adaptive(minimum: 200, maximum: 400))]
 	
     var body: some View {
+		@Bindable var bvm = ShoesVM()
+		
 		ScrollView {
 			ZStack {
 				ContentUnavailableView(
@@ -28,26 +30,33 @@ struct FavoritesView: View {
 				
 				LazyVGrid(columns: columns) {
 					ForEach(vm.favorites) { shoe in
-						VStack {
-							Model3D(named: shoe.model3DName, bundle: shoes3DBundle) { model in
-								model
-									.resizable()
-									.scaledToFit()
-									.frame(depth: 300)
-									.frame(width: 300, height: 300)
-									.scaleEffect(
-										rotateVM.applyScaleToShoe(shoe) ? 0.1 : 0.7
-									)
-							} placeholder: {
-								ProgressView()
+						RealityView { content, attachment in
+							do {
+								let scene = try await Entity(named: "Scene", in: shoes3DBundle)
+								
+								if let entity = scene.findEntity(named: shoe.model3DName),
+								   let info = attachment.entity(for: "info") {
+									entity.scale = [0.0001, 0.0001, 0.0001]
+									info.setPosition([0, -0.1, 0], relativeTo: entity)
+									entity.addChild(info, preservingWorldTransform: true)
+									content.add(entity)
+								}
+							} catch {
+								bvm.initialAlert = true
 							}
-							Text(shoe.name)
-							Text(shoe.model3DName)
-							Button(role: .destructive) {
-								favVM.isFavorite.toggle()
-								vm.toggleFavorite(shoe)
-							} label: {
-								Image(systemName: "trash")
+						} placeholder: {
+							ProgressView()
+						} attachments: {
+							Attachment(id: "info") {
+								VStack {
+									Text(shoe.name)
+									Button(role: .destructive) {
+										favVM.isFavorite.toggle()
+										vm.toggleFavorite(shoe)
+									} label: {
+										Image(systemName: "trash")
+									}
+								}
 							}
 						}
 					}
@@ -60,6 +69,6 @@ struct FavoritesView: View {
 
 #Preview(windowStyle: .automatic) {
     FavoritesView()
-		.environment(ShoesVM())
+		.environment(ShoesVM(interactor: TestInteractor()))
 		.environment(FavoriteVM())
 }
