@@ -18,6 +18,7 @@ final class RotateModelVM {
 	var lastVerticalDragValue: CGFloat = 0.0
 	var velocityH: CGFloat = 0.0
 	var velocityV: CGFloat = 0.0
+	var timer: Timer?
 	
 	func applyScaleToShoe(_ shoe: Shoe) -> Bool {
 		shoe.model3DName == "AirSportShoe" ||
@@ -28,16 +29,23 @@ final class RotateModelVM {
 	}
 	
 	func startRotation() {
-		let timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
+		timer?.invalidate()
+		timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
 			if self.rotate {
 				if self.rotationAngle < 360 {
-					self.rotationAngle += 1.2
+					self.rotationAngle += 0.8
 				} else {
 					self.rotationAngle = 0
 				}
 			}
 		}
-		RunLoop.current.add(timer, forMode: .common)
+		if let timer {
+			RunLoop.current.add(timer, forMode: .common)
+		}
+	}
+	
+	func stopRotation() {
+		timer?.invalidate()
 	}
 	
 	func touchingModel(value: DragGesture.Value) {

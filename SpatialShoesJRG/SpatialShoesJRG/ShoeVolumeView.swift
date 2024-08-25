@@ -66,9 +66,8 @@ struct ShoeVolumeView: View {
 			}
 			.onDisappear {
 				vm.showingDetail = false
+				rotateVM.stopRotation()
 			}
-		} else {
-			Button("Dale") { vm.selectedShoe = .preview }
 		}
 	}
 }
