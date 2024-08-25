@@ -30,7 +30,7 @@ struct Pruebas: View {
 					let scene = try await Entity(named: "Scene", in: shoes3DBundle)
 					if let entity = scene.findEntity(named: shoe.model3DName) {
 						content.add(entity)
-						entity.scale = [0.0002, 0.0002, 0.0002]
+						entity.scale = [0.001, 0.001, 0.001]
 					} else {
 						print("No encuentra \(shoe.model3DName)")
 					}

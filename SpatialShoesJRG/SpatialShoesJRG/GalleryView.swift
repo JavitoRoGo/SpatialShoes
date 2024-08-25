@@ -9,8 +9,6 @@ import SwiftUI
 
 struct GalleryView: View {
 	@Environment(ShoesVM.self) private var vm
-	@State private var rotate = true
-	@State private var touch = false
 	
     var body: some View {
 		@Bindable var bvm = vm
@@ -23,16 +21,6 @@ struct GalleryView: View {
 				}
 			}
 			.navigationTitle("Bienvenido a ¡Spatial Shoes!")
-			.toolbar {
-				ToolbarItem(placement: .bottomOrnament) {
-					HStack {
-						Toggle("Expositor", isOn: $rotate)
-							.disabled(touch)
-						Toggle("Girar en 3D", isOn: $touch)
-							.disabled(rotate)
-					}
-				}
-			}
 		} content: {
 			if let selectedShoe = vm.selectedShoe {
 				ShoeInfoView(shoe: selectedShoe)
@@ -45,7 +33,7 @@ struct GalleryView: View {
 			}
 		} detail: {
 			if let selected = vm.selectedShoe {
-				ShoeModelView(shoe: selected, rotate: $rotate, touch: $touch)
+				ShoeModelView(shoe: selected)
 			}
 		}
     }

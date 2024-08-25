@@ -13,9 +13,8 @@ struct ShoeModelView: View {
 	let shoe: Shoe
 	@Environment(\.openWindow) private var openWindow
 	@Environment(ShoesVM.self) private var vm
+	
 	@State private var rotateVM = RotateModelVM()
-	@Binding var rotate: Bool
-	@Binding var touch: Bool
 	
     var body: some View {
 		VStack {
@@ -23,28 +22,14 @@ struct ShoeModelView: View {
 				model
 					.resizable()
 					.scaledToFit()
-					.frame(depth: 400)
-					.frame(width: 400, height: 400)
+					.frame(depth: 300)
+					.frame(width: 300, height: 300)
 					.scaleEffect(
 						rotateVM.applyScaleToShoe(shoe) ? 0.4 : 1.0
 					)
-					.offset(y: 50)
-					.rotation3DEffect(.degrees(rotateVM.rotationAngle), axis: (0,1,0), anchor: .center)
-					.rotation3DEffect(.degrees(Double(rotateVM.currentHRotation)), axis: (0,1,0))
-					.rotation3DEffect(.degrees(Double(rotateVM.currentVRotation)), axis: (1,0,0))
 			} placeholder: {
 				ProgressView()
 			}
-			.gesture(
-				DragGesture()
-					.onChanged { value in
-						rotateVM.touchingModel(value: value)
-					}
-					.onEnded { _ in
-						rotateVM.lastHorizontalDragValue = 0.0
-						rotateVM.lastVerticalDragValue = 0.0
-					}
-			)
 			.onTapGesture {
 				if !vm.showingDetail {
 					vm.showingDetail = true
@@ -53,22 +38,12 @@ struct ShoeModelView: View {
 			}
 			
 			Text("Pulsa sobre el modelo para verlo en más detalle.")
-		}
-		.onAppear {
-			rotateVM.startRotation()
-		}
-		.onChange(of: rotate) {
-			rotateVM.rotate = rotate
-		}
-		.onChange(of: touch) {
-			rotateVM.touch = touch
+				.padding(.top, 40)
 		}
     }
 }
 
 #Preview(windowStyle: .automatic) {
-//	@Previewable @State var rotate = false
-//	@Previewable @State var touch = true
-	ShoeModelView(shoe: .preview, rotate: .constant(true), touch: .constant(false))
+	ShoeModelView(shoe: .preview)
 		.environment(ShoesVM(interactor: TestInteractor()))
 }
