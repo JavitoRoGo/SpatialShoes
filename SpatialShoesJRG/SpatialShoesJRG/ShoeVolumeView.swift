@@ -18,22 +18,14 @@ struct ShoeVolumeView: View {
 	var body: some View {
 		if let shoe = vm.selectedShoe {
 			VStack {
-				Model3D(named: shoe.model3DName, bundle: shoes3DBundle) { model in
-					model
-						.resizable()
-						.scaledToFit()
-						.frame(depth: 400)
-						.frame(height: 400)
-						.scaleEffect(
-							rotateVM.applyScaleToShoe(shoe) ? 0.4 : 1.0
-						)
-						.offset(y: 50)
-						.rotation3DEffect(.degrees(rotateVM.rotationAngle), axis: (0,1,0), anchor: .center)
-						.rotation3DEffect(.degrees(Double(rotateVM.currentHRotation)), axis: (0,1,0))
-						.rotation3DEffect(.degrees(Double(rotateVM.currentVRotation)), axis: (1,0,0))
-				} placeholder: {
-					ProgressView()
-				}
+				Shoe3DModelView(shoe: shoe,
+								applyScale: rotateVM.applyScaleToShoe(shoe),
+								width: 400,
+								height: 400,
+								depth: 400,
+								rotationAngle: rotateVM.rotationAngle,
+								currentHRotation: rotateVM.currentHRotation,
+								currentVRotation: rotateVM.currentVRotation)
 				.gesture(
 					DragGesture()
 						.onChanged { value in

@@ -18,18 +18,7 @@ struct ShoeModelView: View {
 	
     var body: some View {
 		VStack {
-			Model3D(named: shoe.model3DName, bundle: shoes3DBundle) { model in
-				model
-					.resizable()
-					.scaledToFit()
-					.frame(depth: 300)
-					.frame(width: 300, height: 300)
-					.scaleEffect(
-						rotateVM.applyScaleToShoe(shoe) ? 0.4 : 1.0
-					)
-			} placeholder: {
-				ProgressView()
-			}
+			Shoe3DModelView(shoe: shoe, applyScale: rotateVM.applyScaleToShoe(shoe))
 			.onTapGesture {
 				if !vm.showingVolumeDetail {
 					vm.showingVolumeDetail = true

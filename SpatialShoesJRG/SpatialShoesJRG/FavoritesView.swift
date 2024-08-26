@@ -60,20 +60,12 @@ struct FavoritesView: View {
 						}
 						 */
 						VStack {
-							Model3D(named: shoe.model3DName, bundle: shoes3DBundle) { model in
-								model
-									.resizable()
-									.scaledToFit()
-									.frame(depth: 200)
-									.frame(height: 200)
-									.scaleEffect(
-										rotateVM.applyScaleToShoe(shoe) ? 0.4 : 1.0
-									)
-									.offset(y: 50)
-									.rotation3DEffect(.degrees(rotateVM.rotationAngle), axis: (0,1,0), anchor: .center)
-							} placeholder: {
-								ProgressView()
-							}
+							Shoe3DModelView(shoe: shoe, 
+											applyScale: rotateVM.applyScaleToShoe(shoe),
+											width: 200, 
+											height: 200,
+											depth: 200,
+											rotationAngle: rotateVM.rotationAngle)
 							.onTapGesture {
 								favVM.selectedFav = shoe
 								if !favVM.showingFavDetail {

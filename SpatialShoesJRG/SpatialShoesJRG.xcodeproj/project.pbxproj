@@ -27,6 +27,7 @@
 		44818ED92C66C3DF001DB341 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818ED82C66C3DF001DB341 /* FavoritesView.swift */; };
 		449048342C67D6E10042C254 /* RotateModelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449048332C67D6E10042C254 /* RotateModelVM.swift */; };
 		44ACA0882C7CBE7B00238184 /* FavInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA0872C7CBE7B00238184 /* FavInfoView.swift */; };
+		44ACA08B2C7CDC1500238184 /* Shoe3DModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA08A2C7CDC1500238184 /* Shoe3DModelView.swift */; };
 		44C2534A2C78B6EB00A54819 /* ShoeVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C253492C78B6EB00A54819 /* ShoeVolumeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +54,7 @@
 		44818ED82C66C3DF001DB341 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		449048332C67D6E10042C254 /* RotateModelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateModelVM.swift; sourceTree = "<group>"; };
 		44ACA0872C7CBE7B00238184 /* FavInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavInfoView.swift; sourceTree = "<group>"; };
+		44ACA08A2C7CDC1500238184 /* Shoe3DModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe3DModelView.swift; sourceTree = "<group>"; };
 		44C253492C78B6EB00A54819 /* ShoeVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeVolumeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 				440023E72C74C0EF004AB31D /* Pruebas.swift */,
 				44818ED82C66C3DF001DB341 /* FavoritesView.swift */,
 				44ACA0872C7CBE7B00238184 /* FavInfoView.swift */,
+				44ACA0892C7CDA5900238184 /* Components */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -175,6 +178,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		44ACA0892C7CDA5900238184 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				44ACA08A2C7CDC1500238184 /* Shoe3DModelView.swift */,
+			);
+			name = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				4424C81A2C642076002C973A /* MainView.swift in Sources */,
 				449048342C67D6E10042C254 /* RotateModelVM.swift in Sources */,
 				4417FDBD2C65844B00F3A08D /* ShoeInfoView.swift in Sources */,
+				44ACA08B2C7CDC1500238184 /* Shoe3DModelView.swift in Sources */,
 				44C2534A2C78B6EB00A54819 /* ShoeVolumeView.swift in Sources */,
 				44818EC82C663115001DB341 /* FavoriteVM.swift in Sources */,
 				4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */,

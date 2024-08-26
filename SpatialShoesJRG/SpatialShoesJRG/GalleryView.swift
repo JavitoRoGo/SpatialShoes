@@ -23,7 +23,7 @@ struct GalleryView: View {
 			.navigationTitle("Bienvenido a ¡Spatial Shoes!")
 		} content: {
 			if let selectedShoe = vm.selectedShoe {
-				ShoeInfoView(shoe: selectedShoe)
+				ShoeInfoView(shoe: selectedShoe, showToggle: true)
 			} else {
 				ContentUnavailableView(
 					"Spatial Shoes",

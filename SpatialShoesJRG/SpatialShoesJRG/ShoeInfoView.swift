@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ShoeInfoView: View {
 	let shoe: Shoe
+	let showToggle: Bool
 	@Environment(FavoriteVM.self) private var favVM
 	@State private var size = 0
 	
@@ -41,6 +42,7 @@ struct ShoeInfoView: View {
 							Text(favVM.isFavorite ? "Eliminar de Favoritos" : "Añadir a Favoritos")
 						}
 					}
+					.opacity(showToggle ? 1.0 : 0.0)
 				}
 				Divider()
 					.padding(.vertical, 25)
@@ -58,7 +60,7 @@ struct ShoeInfoView: View {
 }
 
 #Preview(windowStyle: .automatic) {
-	ShoeInfoView(shoe: .preview)
+	ShoeInfoView(shoe: .preview, showToggle: true)
 		.environment(ShoesVM(interactor: TestInteractor()))
 		.environment(FavoriteVM(interactor: TestInteractor()))
 }

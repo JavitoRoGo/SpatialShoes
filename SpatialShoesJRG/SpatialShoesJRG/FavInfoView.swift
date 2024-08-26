@@ -12,7 +12,7 @@ struct FavInfoView: View {
 	
     var body: some View {
 		if let shoe = favVM.selectedFav {
-			ShoeInfoView(shoe: shoe)
+			ShoeInfoView(shoe: shoe, showToggle: false)
 				.onDisappear {
 					favVM.showingFavDetail = false
 				}
