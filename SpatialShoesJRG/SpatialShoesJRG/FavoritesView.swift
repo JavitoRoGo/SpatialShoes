@@ -10,15 +10,13 @@ import RealityKit
 import Shoes3D
 
 struct FavoritesView: View {
-	@Environment(ShoesVM.self) private var vm
 	@Environment(FavoriteVM.self) private var favVM
+	@Environment(\.openWindow) private var openWindow
 	@State private var rotateVM = RotateModelVM()
 	
 	let columns = [GridItem(.adaptive(minimum: 200, maximum: 300))]
 	
     var body: some View {
-		@Bindable var bvm = vm
-		
 		ScrollView {
 			ZStack {
 				ContentUnavailableView(
@@ -26,10 +24,10 @@ struct FavoritesView: View {
 					systemImage: "shoe.fill",
 					description: Text("No has marcado ningún artículo como favorito.")
 				)
-				.opacity(vm.favorites.isEmpty ? 1.0 : 0.0)
+				.opacity(favVM.favorites.isEmpty ? 1.0 : 0.0)
 				
 				LazyVGrid(columns: columns) {
-					ForEach(vm.favorites) { shoe in
+					ForEach(favVM.favorites) { shoe in
 						/*
 						RealityView { content, attachment in
 							do {
@@ -76,16 +74,18 @@ struct FavoritesView: View {
 							} placeholder: {
 								ProgressView()
 							}
+							.onTapGesture {
+								if !favVM.showingFavDetail {
+									favVM.showingFavDetail = true
+									openWindow(id: "favDetail")
+								}
+							}
 							
 							VStack {
 								Text(shoe.name)
 								Button {
 									favVM.isFavorite.toggle()
-									vm.toggleFavorite(shoe)
-									Task {
-										try? await Task.sleep(nanoseconds: 1000000)
-										rotateVM.rotate = true
-									}
+									favVM.toggleFavorite(shoe)
 								} label: {
 									Image(systemName: "trash")
 								}
@@ -99,7 +99,7 @@ struct FavoritesView: View {
 						}
 					}
 				}
-				.opacity(vm.favorites.isEmpty ? 0.0 : 1.0)
+				.opacity(favVM.favorites.isEmpty ? 0.0 : 1.0)
 			}
 		}
     }
@@ -108,5 +108,5 @@ struct FavoritesView: View {
 #Preview(windowStyle: .automatic) {
     FavoritesView()
 		.environment(ShoesVM(interactor: TestInteractor()))
-		.environment(FavoriteVM())
+		.environment(FavoriteVM(interactor: TestInteractor()))
 }

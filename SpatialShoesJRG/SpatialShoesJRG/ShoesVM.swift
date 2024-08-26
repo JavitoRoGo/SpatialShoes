@@ -12,13 +12,9 @@ final class ShoesVM {
 	let interactor: DataInteractor
 	
 	var shoes: [Shoe]
-	var favorites: [Shoe] = [] {
-		didSet {
-			saveFavorites()
-		}
-	}
+	
 	var selectedShoe: Shoe?
-	var showingDetail = false
+	var showingVolumeDetail = false
 	
 	var initialAlert = false
 	@ObservationIgnored var errorMsg = ""
@@ -28,31 +24,10 @@ final class ShoesVM {
 		do {
 			let data = try interactor.getData()
 			shoes = data
-			let fav = try interactor.getFavorites()
-			favorites = fav
 		} catch {
 			shoes = []
 			initialAlert = true
 			errorMsg = "Hubo un problema con los datos\nPor favor, inténtalo de nuevo más tarde."
-		}
-	}
-	
-	func saveFavorites() {
-		do {
-			try interactor.saveFavorites(favorites)
-		} catch {
-			initialAlert = true
-			errorMsg = "Hubo un problema con los datos\nPor favor, inténtalo de nuevo más tarde."
-		}
-	}
-	
-	func toggleFavorite(_ shoe: Shoe) {
-		if let index = favorites.firstIndex(where: { $0.id == shoe.id }) {
-			// Remove from favorites
-			favorites.remove(at: index)
-		} else {
-			// Add to favorites
-			favorites.append(shoe)
 		}
 	}
 }

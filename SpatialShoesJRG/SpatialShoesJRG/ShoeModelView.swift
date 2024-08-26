@@ -31,8 +31,8 @@ struct ShoeModelView: View {
 				ProgressView()
 			}
 			.onTapGesture {
-				if !vm.showingDetail {
-					vm.showingDetail = true
+				if !vm.showingVolumeDetail {
+					vm.showingVolumeDetail = true
 					openWindow(id: "shoeDetail")
 				}
 			}

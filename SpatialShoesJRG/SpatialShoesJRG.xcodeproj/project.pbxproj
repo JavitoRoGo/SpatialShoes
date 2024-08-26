@@ -26,6 +26,7 @@
 		44818ED12C667C48001DB341 /* ShoeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818ED02C667C48001DB341 /* ShoeModelView.swift */; };
 		44818ED92C66C3DF001DB341 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818ED82C66C3DF001DB341 /* FavoritesView.swift */; };
 		449048342C67D6E10042C254 /* RotateModelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449048332C67D6E10042C254 /* RotateModelVM.swift */; };
+		44ACA0882C7CBE7B00238184 /* FavInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA0872C7CBE7B00238184 /* FavInfoView.swift */; };
 		44C2534A2C78B6EB00A54819 /* ShoeVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C253492C78B6EB00A54819 /* ShoeVolumeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -51,6 +52,7 @@
 		44818ED02C667C48001DB341 /* ShoeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeModelView.swift; sourceTree = "<group>"; };
 		44818ED82C66C3DF001DB341 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		449048332C67D6E10042C254 /* RotateModelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateModelVM.swift; sourceTree = "<group>"; };
+		44ACA0872C7CBE7B00238184 /* FavInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavInfoView.swift; sourceTree = "<group>"; };
 		44C253492C78B6EB00A54819 /* ShoeVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeVolumeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -163,6 +165,7 @@
 				44C253492C78B6EB00A54819 /* ShoeVolumeView.swift */,
 				440023E72C74C0EF004AB31D /* Pruebas.swift */,
 				44818ED82C66C3DF001DB341 /* FavoritesView.swift */,
+				44ACA0872C7CBE7B00238184 /* FavInfoView.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44ACA0882C7CBE7B00238184 /* FavInfoView.swift in Sources */,
 				4424C8242C642890002C973A /* JSONInteractor.swift in Sources */,
 				4424C8212C6425F0002C973A /* ShoeModel.swift in Sources */,
 				44818ED92C66C3DF001DB341 /* FavoritesView.swift in Sources */,

@@ -65,7 +65,7 @@ struct ShoeVolumeView: View {
 				rotateVM.touch = touch
 			}
 			.onDisappear {
-				vm.showingDetail = false
+				vm.showingVolumeDetail = false
 				rotateVM.stopRotation()
 			}
 		}

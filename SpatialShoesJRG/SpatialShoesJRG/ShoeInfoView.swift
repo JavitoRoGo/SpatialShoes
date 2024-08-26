@@ -37,7 +37,7 @@ struct ShoeInfoView: View {
 						Spacer()
 						Button {
 							favVM.isFavorite.toggle()
-							vm.toggleFavorite(shoe)
+							favVM.toggleFavorite(shoe)
 						} label: {
 							Text(favVM.isFavorite ? "Eliminar de Favoritos" : "Añadir a Favoritos")
 						}
@@ -53,7 +53,7 @@ struct ShoeInfoView: View {
 		}
 		.padding()
 		.onChange(of: shoe, initial: true) {
-			favVM.isShoeFavorite(favs: vm.favorites, shoe: shoe)
+			favVM.isShoeFavorite(shoe: shoe)
 		}
     }
 }
@@ -61,5 +61,5 @@ struct ShoeInfoView: View {
 #Preview(windowStyle: .automatic) {
 	ShoeInfoView(shoe: .preview)
 		.environment(ShoesVM(interactor: TestInteractor()))
-		.environment(FavoriteVM())
+		.environment(FavoriteVM(interactor: TestInteractor()))
 }

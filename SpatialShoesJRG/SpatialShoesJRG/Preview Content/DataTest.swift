@@ -9,6 +9,11 @@ import Foundation
 
 struct TestInteractor: DataInteractor {
 	var url: URL = Bundle.main.url(forResource: "shoesTest", withExtension: "json")!
+	var favURL: URL = Bundle.main.url(forResource: "shoesTest", withExtension: "json")!
+	
+	func getFavorites() throws -> [Shoe] {
+		try loadJSON(url: favURL, type: [Shoe].self)
+	}
 }
 
 extension Shoe {
