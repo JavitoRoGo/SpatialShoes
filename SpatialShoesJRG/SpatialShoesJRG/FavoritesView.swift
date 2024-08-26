@@ -75,6 +75,7 @@ struct FavoritesView: View {
 								ProgressView()
 							}
 							.onTapGesture {
+								favVM.selectedFav = shoe
 								if !favVM.showingFavDetail {
 									favVM.showingFavDetail = true
 									openWindow(id: "favDetail")

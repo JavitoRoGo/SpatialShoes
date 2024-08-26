@@ -31,5 +31,6 @@ struct SpatialShoesJRGApp: App {
 				.environment(favVM)
 		}
 		.windowStyle(.automatic)
+		.defaultSize(width: 600, height: 500)
     }
 }

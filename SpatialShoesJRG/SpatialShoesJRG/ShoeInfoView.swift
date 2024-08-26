@@ -10,7 +10,6 @@ import SwiftUI
 struct ShoeInfoView: View {
 	let shoe: Shoe
 	@Environment(FavoriteVM.self) private var favVM
-	@Environment(ShoesVM.self) private var vm
 	@State private var size = 0
 	
     var body: some View {
