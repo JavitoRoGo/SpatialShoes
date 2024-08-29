@@ -9,6 +9,8 @@ import SwiftUI
 
 struct GalleryView: View {
 	@Environment(ShoesVM.self) private var vm
+	@Environment(\.openImmersiveSpace) private var openImmersive
+	@Environment(\.dismissImmersiveSpace) private var dismissImmersive
 	
     var body: some View {
 		@Bindable var bvm = vm
@@ -20,7 +22,14 @@ struct GalleryView: View {
 						.tag(shoe)
 				}
 			}
-			.navigationTitle("Bienvenido a ¡Spatial Shoes!")
+			.navigationTitle("Spatial Shoes")
+			.toolbar {
+				ToolbarItem(placement: .bottomOrnament) {
+					Toggle(isOn: $bvm.showingImmersive) {
+						Text("Espacio inmersivo")
+					}
+				}
+			}
 		} content: {
 			if let selectedShoe = vm.selectedShoe {
 				ShoeInfoView(shoe: selectedShoe, showToggle: true)
@@ -34,6 +43,15 @@ struct GalleryView: View {
 		} detail: {
 			if let selected = vm.selectedShoe {
 				ShoeModelView(shoe: selected)
+			}
+		}
+		.onChange(of: vm.showingImmersive) {
+			Task {
+				if vm.showingImmersive {
+					await openImmersive(id: "immersive")
+				} else {
+					await dismissImmersive()
+				}
 			}
 		}
     }

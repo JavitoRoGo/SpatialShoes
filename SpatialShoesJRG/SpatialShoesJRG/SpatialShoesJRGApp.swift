@@ -12,8 +12,10 @@ struct SpatialShoesJRGApp: App {
 	@State private var vm = ShoesVM()
 	@State private var favVM = FavoriteVM()
 	
+	@State private var immersiveStyle: ImmersionStyle = .mixed
+	
     var body: some Scene {
-        WindowGroup {
+		WindowGroup(id: "mainView") {
             MainView()
 				.environment(vm)
 				.environment(favVM)
@@ -32,5 +34,11 @@ struct SpatialShoesJRGApp: App {
 		}
 		.windowStyle(.automatic)
 		.defaultSize(width: 600, height: 500)
+		
+		ImmersiveSpace(id: "immersive") {
+			ImmersiveGalleryView()
+				.environment(vm)
+		}
+		.immersionStyle(selection: $immersiveStyle, in: .mixed, .progressive, .full)
     }
 }

@@ -15,6 +15,7 @@ struct Shoe: Codable, Identifiable, Hashable {
 	let price: Double
 	let description: String
 	let model3DName: String
+	let scale: Float
 	let type: String
 	let materials: [String]
 	let origin: String

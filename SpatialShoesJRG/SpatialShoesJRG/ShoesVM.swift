@@ -15,6 +15,7 @@ final class ShoesVM {
 	
 	var selectedShoe: Shoe?
 	var showingVolumeDetail = false
+	var showingImmersive = false
 	
 	var initialAlert = false
 	@ObservationIgnored var errorMsg = ""

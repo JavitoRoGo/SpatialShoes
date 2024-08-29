@@ -20,6 +20,7 @@
 		4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C8282C642ABD002C973A /* ShoesVM.swift */; };
 		4424C82B2C642E2B002C973A /* shoesTest.json in Resources */ = {isa = PBXBuildFile; fileRef = 4424C82A2C642E2B002C973A /* shoesTest.json */; };
 		4424C82D2C642E58002C973A /* DataTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4424C82C2C642E52002C973A /* DataTest.swift */; };
+		4430F7202C7F5C6A0061C6AC /* ImmersiveGalleryVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4430F71F2C7F5C6A0061C6AC /* ImmersiveGalleryVM.swift */; };
 		446F15482C78C89200F2AB92 /* Shoes3D in Frameworks */ = {isa = PBXBuildFile; productRef = 446F15472C78C89200F2AB92 /* Shoes3D */; };
 		44818EC62C662E8C001DB341 /* GalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818EC52C662E8C001DB341 /* GalleryView.swift */; };
 		44818EC82C663115001DB341 /* FavoriteVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44818EC72C663115001DB341 /* FavoriteVM.swift */; };
@@ -28,6 +29,7 @@
 		449048342C67D6E10042C254 /* RotateModelVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 449048332C67D6E10042C254 /* RotateModelVM.swift */; };
 		44ACA0882C7CBE7B00238184 /* FavInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA0872C7CBE7B00238184 /* FavInfoView.swift */; };
 		44ACA08B2C7CDC1500238184 /* Shoe3DModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA08A2C7CDC1500238184 /* Shoe3DModelView.swift */; };
+		44ACA08D2C7CE67100238184 /* ImmersiveGalleryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44ACA08C2C7CE67100238184 /* ImmersiveGalleryView.swift */; };
 		44C2534A2C78B6EB00A54819 /* ShoeVolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44C253492C78B6EB00A54819 /* ShoeVolumeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +49,7 @@
 		4424C8282C642ABD002C973A /* ShoesVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesVM.swift; sourceTree = "<group>"; };
 		4424C82A2C642E2B002C973A /* shoesTest.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = shoesTest.json; sourceTree = "<group>"; };
 		4424C82C2C642E52002C973A /* DataTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTest.swift; sourceTree = "<group>"; };
+		4430F71F2C7F5C6A0061C6AC /* ImmersiveGalleryVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveGalleryVM.swift; sourceTree = "<group>"; };
 		446F15452C78C86D00F2AB92 /* Shoes3D */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = Shoes3D; path = ../../Shoes3D; sourceTree = "<group>"; };
 		44818EC52C662E8C001DB341 /* GalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryView.swift; sourceTree = "<group>"; };
 		44818EC72C663115001DB341 /* FavoriteVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteVM.swift; sourceTree = "<group>"; };
@@ -55,6 +58,7 @@
 		449048332C67D6E10042C254 /* RotateModelVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateModelVM.swift; sourceTree = "<group>"; };
 		44ACA0872C7CBE7B00238184 /* FavInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavInfoView.swift; sourceTree = "<group>"; };
 		44ACA08A2C7CDC1500238184 /* Shoe3DModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shoe3DModelView.swift; sourceTree = "<group>"; };
+		44ACA08C2C7CE67100238184 /* ImmersiveGalleryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImmersiveGalleryView.swift; sourceTree = "<group>"; };
 		44C253492C78B6EB00A54819 /* ShoeVolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoeVolumeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +172,8 @@
 				440023E72C74C0EF004AB31D /* Pruebas.swift */,
 				44818ED82C66C3DF001DB341 /* FavoritesView.swift */,
 				44ACA0872C7CBE7B00238184 /* FavInfoView.swift */,
+				44ACA08C2C7CE67100238184 /* ImmersiveGalleryView.swift */,
+				4430F71F2C7F5C6A0061C6AC /* ImmersiveGalleryVM.swift */,
 				44ACA0892C7CDA5900238184 /* Components */,
 			);
 			name = View;
@@ -275,12 +281,14 @@
 				4417FDBD2C65844B00F3A08D /* ShoeInfoView.swift in Sources */,
 				44ACA08B2C7CDC1500238184 /* Shoe3DModelView.swift in Sources */,
 				44C2534A2C78B6EB00A54819 /* ShoeVolumeView.swift in Sources */,
+				44ACA08D2C7CE67100238184 /* ImmersiveGalleryView.swift in Sources */,
 				44818EC82C663115001DB341 /* FavoriteVM.swift in Sources */,
 				4424C8292C642AC1002C973A /* ShoesVM.swift in Sources */,
 				4424C82D2C642E58002C973A /* DataTest.swift in Sources */,
 				4424C81B2C642076002C973A /* SpatialShoesJRGApp.swift in Sources */,
 				44818ED12C667C48001DB341 /* ShoeModelView.swift in Sources */,
 				440023E82C74C0EF004AB31D /* Pruebas.swift in Sources */,
+				4430F7202C7F5C6A0061C6AC /* ImmersiveGalleryVM.swift in Sources */,
 				44818EC62C662E8C001DB341 /* GalleryView.swift in Sources */,
 				4424C8262C64295A002C973A /* ShoeInteractor.swift in Sources */,
 			);
