@@ -39,6 +39,6 @@ struct SpatialShoesJRGApp: App {
 			ImmersiveGalleryView()
 				.environment(vm)
 		}
-		.immersionStyle(selection: $immersiveStyle, in: .mixed, .progressive, .full)
+		.immersionStyle(selection: $immersiveStyle, in: .mixed, .full)
     }
 }

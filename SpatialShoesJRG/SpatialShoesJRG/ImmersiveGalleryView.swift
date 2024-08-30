@@ -16,60 +16,84 @@ struct ImmersiveGalleryView: View {
 	@State private var galleryVM = ImmersiveGalleryVM()
 	
 	var body: some View {
-		RealityView { content, attachments in
-			do {
-				if let menu = attachments.entity(for: "menu") {
-					galleryVM.headAnchor.addChild(menu)
-					menu.name = "menu"
-					menu.setPosition([0, -0.2, -1.0], relativeTo: galleryVM.headAnchor)
+		Group {
+			RealityView { content, attachments in
+				do {
+					if let menu = attachments.entity(for: "menu") {
+						galleryVM.headAnchor.addChild(menu)
+						menu.name = "menu"
+						menu.setPosition([0, -0.3, -1.0], relativeTo: galleryVM.headAnchor)
+					}
+					
+					for (position, shoe) in vm.shoes.enumerated() {
+						let entity = try await Entity(named: shoe.model3DName, in: shoes3DBundle)
+						entity.scale = SIMD3<Float>(repeating: shoe.scale / 10)
+						entity.position = galleryVM.coordinatesForShoe(pos: position)
+						entity.setParent(galleryVM.headAnchor, preservingWorldTransform: false)
+					}
+					content.add(galleryVM.headAnchor)
+				} catch {
+					print(error.localizedDescription)
 				}
-				
-				for (position, shoe) in vm.shoes.enumerated() {
-					let entity = try await Entity(named: shoe.model3DName, in: shoes3DBundle)
-					entity.scale = SIMD3<Float>(repeating: shoe.scale / 10)
-					entity.position = galleryVM.coordinatesForShoe(pos: position)
-					entity.setParent(galleryVM.headAnchor, preservingWorldTransform: false)
+			} update: { content, _ in
+				if let head = content.entities.first {
+					let entities = head.children.filter { entity in
+						entity.name != "menu"
+					}
+					for (pos, entity) in entities.enumerated() {
+						try? galleryVM.rotateCarrousel(entity, pos: pos - galleryVM.index)
+					}
 				}
-				content.add(galleryVM.headAnchor)
-			} catch {
-				print(error.localizedDescription)
-			}
-		} update: { content, _ in
-			if let head = content.entities.first {
-				let entities = head.children.filter { entity in
-					entity.name != "menu"
-				}
-				for (pos, entity) in entities.enumerated() {
-					try? galleryVM.moveShoe(entity, pos: pos - galleryVM.index)
-				}
-			}
-		} attachments: {
-			Attachment(id: "menu") {
-				VStack {
-					Text(vm.shoes[galleryVM.index].name)
-						.font(.largeTitle)
-					HStack {
-						Button {
-							galleryVM.index -= 1
-							if galleryVM.index < 0 {
-								galleryVM.index = vm.shoes.count - 1
+			} attachments: {
+				Attachment(id: "menu") {
+					VStack {
+						Text(vm.shoes[galleryVM.index].name)
+							.font(.largeTitle)
+						HStack {
+							Button {
+								galleryVM.index -= 1
+								if galleryVM.index < 0 {
+									galleryVM.index = vm.shoes.count - 1
+								}
+							} label: {
+								Image(systemName: "chevron.left")
 							}
-						} label: {
-							Image(systemName: "chevron.left")
+							Button {
+								galleryVM.index += 1
+								if galleryVM.index > vm.shoes.count - 1 {
+									galleryVM.index = 0
+								}
+							} label: {
+								Image(systemName: "chevron.right")
+							}
 						}
+						.frame(width: 400)
 						Button {
-							galleryVM.index += 1
-							if galleryVM.index > vm.shoes.count - 1 {
-								galleryVM.index = 0
+							if galleryVM.showingSelected {
+								galleryVM.removeSelected()
+							} else {
+								galleryVM.selected = vm.shoes[galleryVM.index]
+								galleryVM.showingSelected = true
+								Task { try await galleryVM.showSelected() }
 							}
 						} label: {
-							Image(systemName: "chevron.right")
+							Text(galleryVM.showingSelected ? "Ocultar modelo" : "Ver modelo")
 						}
 					}
-					.frame(width: 400)
+					.padding()
+					.glassBackgroundEffect()
 				}
-				.padding()
-				.glassBackgroundEffect()
+			}
+			
+			if let _ = galleryVM.selected {
+				RealityView { content in
+					content.add(galleryVM.handAnchor)
+				}
+				.gesture(
+					SpatialTapGesture().targetedToEntity(galleryVM.content).onEnded { value in
+						galleryVM.removeSelected()
+					}
+				)
 			}
 		}
 		.onAppear {

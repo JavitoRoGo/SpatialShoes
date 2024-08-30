@@ -28,37 +28,6 @@ struct FavoritesView: View {
 				
 				LazyVGrid(columns: columns) {
 					ForEach(favVM.favorites) { shoe in
-						/*
-						RealityView { content, attachment in
-							do {
-								let scene = try await Entity(named: "Scene", in: shoes3DBundle)
-								
-								if let entity = scene.findEntity(named: shoe.model3DName),
-								   let info = attachment.entity(for: "info") {
-									entity.scale = [0.0001, 0.0001, 0.0001]
-									info.setPosition([0, -0.1, 0], relativeTo: entity)
-									entity.addChild(info, preservingWorldTransform: true)
-									content.add(entity)
-								}
-							} catch {
-								bvm.initialAlert = true
-							}
-						} placeholder: {
-							ProgressView()
-						} attachments: {
-							Attachment(id: "info") {
-								VStack {
-									Text(shoe.name)
-									Button(role: .destructive) {
-										favVM.isFavorite.toggle()
-										vm.toggleFavorite(shoe)
-									} label: {
-										Image(systemName: "trash")
-									}
-								}
-							}
-						}
-						 */
 						VStack {
 							Shoe3DModelView(shoe: shoe, 
 											applyScale: rotateVM.applyScaleToShoe(shoe),

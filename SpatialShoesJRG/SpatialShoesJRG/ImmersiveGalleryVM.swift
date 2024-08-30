@@ -7,16 +7,24 @@
 
 import SwiftUI
 import RealityKit
+import Shoes3D
 
 @Observable
 final class ImmersiveGalleryVM {
 	let headAnchor = AnchorEntity(.head, trackingMode: .once)
+	let handAnchor = AnchorEntity(.hand(.left, location: .palm), trackingMode: .continuous)
+	let content = Entity()
+	
 	let diameter: Float = 6.5
 	let totalElements = 21
 	
-	var index = 0
 	
-	func moveShoe(_ shoe: Entity, pos: Int) throws {
+	var index = 0
+	var selected: Shoe?
+	var showingSelected = false
+	@ObservationIgnored var timer: Timer?
+	
+	func rotateCarrousel(_ shoe: Entity, pos: Int) throws {
 		var transform = shoe.transform
 		
 		transform.translation = coordinatesForShoe(pos: pos)
@@ -43,5 +51,32 @@ final class ImmersiveGalleryVM {
 		let z = radius * cos(actualAngle) - radius - 1.5
 		
 		return SIMD3<Float>(x, y, z)
+	}
+	
+	@MainActor func showSelected() async throws {
+		guard let selected else { return }
+		let entity = try await Entity(named: selected.model3DName, in: shoes3DBundle)
+		entity.scale = SIMD3<Float>(repeating: selected.scale / 15)
+		entity.components.set(InputTargetComponent())
+		entity.generateCollisionShapes(recursive: true)
+		entity.setParent(content, preservingWorldTransform: false)
+		handAnchor.addChild(content)
+		entity.position = [0, 0.05, 0]
+		rotateSelected(entity)
+	}
+	
+	func removeSelected() {
+		content.children.removeAll()
+		selected = nil
+		showingSelected = false
+		timer?.invalidate()
+	}
+	
+	func rotateSelected(_ entity: Entity) {
+		timer?.invalidate()
+		timer = Timer.scheduledTimer(withTimeInterval: 0.03, repeats: true) { _ in
+			let angle = (Float.pi * 2) / (10 / 0.03)
+			entity.transform.rotation *= simd_quatf(angle: angle, axis: [0, 1, 0])
+		}
 	}
 }
