@@ -28,7 +28,9 @@ struct ImmersiveGalleryView: View {
 					for (position, shoe) in vm.shoes.enumerated() {
 						let entity = try await Entity(named: shoe.model3DName, in: shoes3DBundle)
 						entity.scale = SIMD3<Float>(repeating: shoe.scale / 10)
-						entity.position = galleryVM.coordinatesForShoe(pos: position)
+						entity.transform.rotation = simd_quatf(angle: shoe.radians, axis: [0, 1, 0])
+						entity.position = galleryVM.coordinatesForShoe(shoe, pos: position)
+						entity.name = shoe.model3DName
 						entity.setParent(galleryVM.headAnchor, preservingWorldTransform: false)
 					}
 					content.add(galleryVM.headAnchor)
@@ -97,6 +99,7 @@ struct ImmersiveGalleryView: View {
 			}
 		}
 		.onAppear {
+			galleryVM.shoes = vm.shoes
 			dismissWindow(id: "mainView")
 			dismissWindow(id: "shoeDetail")
 			dismissWindow(id: "favDetail")

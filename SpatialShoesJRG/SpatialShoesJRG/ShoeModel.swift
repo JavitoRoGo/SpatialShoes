@@ -16,6 +16,9 @@ struct Shoe: Codable, Identifiable, Hashable {
 	let description: String
 	let model3DName: String
 	let scale: Float
+	let rotation: Float
+	let posY: Float
+	let posZ: Float
 	let type: String
 	let materials: [String]
 	let origin: String
@@ -35,6 +38,10 @@ extension Shoe {
 			$0.rawValue
 		}
 		.formatted(.list(type: .and).locale(Locale(identifier: "es-ES")))
+	}
+	
+	var radians: Float {
+		rotation * .pi / 180
 	}
 }
 

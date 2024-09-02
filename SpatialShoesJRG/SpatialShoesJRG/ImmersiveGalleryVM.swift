@@ -23,20 +23,21 @@ final class ImmersiveGalleryVM {
 	var selected: Shoe?
 	var showingSelected = false
 	@ObservationIgnored var timer: Timer?
+	@ObservationIgnored var shoes: [Shoe] = []
 	
-	func rotateCarrousel(_ shoe: Entity, pos: Int) throws {
-		var transform = shoe.transform
-		
-		transform.translation = coordinatesForShoe(pos: pos)
+	func rotateCarrousel(_ entity: Entity, pos: Int) throws {
+		var transform = entity.transform
+		guard let shoe = shoes.first(where: { $0.model3DName == entity.name }) else { return }
+		transform.translation = coordinatesForShoe(shoe, pos: pos)
 		
 		let animation = FromToByAnimation(to: transform, duration: 1.0, bindTarget: .transform)
 		let view = AnimationView(source: animation)
 		
 		let animationGroup = AnimationGroup(group: [view])
-		shoe.playAnimation(try AnimationResource.generate(with: animationGroup))
+		entity.playAnimation(try AnimationResource.generate(with: animationGroup))
 	}
 	
-	func coordinatesForShoe(pos: Int) -> SIMD3<Float> {
+	func coordinatesForShoe(_ shoe: Shoe, pos: Int) -> SIMD3<Float> {
 		let radius = diameter / 2.0
 		
 		// Angle between elements
@@ -47,8 +48,8 @@ final class ImmersiveGalleryVM {
 		
 		// (x,z) coordinates using sin and cos
 		let x = radius * sin(actualAngle)
-		let y = (-radius * cos(actualAngle) + 1.5) * 0.1
-		let z = radius * cos(actualAngle) - radius - 1.5
+		let y = ((-radius * cos(actualAngle) + 1.5) * 0.1) + (shoe.posY / 1000)
+		let z = radius * cos(actualAngle) - radius - 1.5 + (shoe.posZ / 1000)
 		
 		return SIMD3<Float>(x, y, z)
 	}
@@ -61,8 +62,8 @@ final class ImmersiveGalleryVM {
 		entity.generateCollisionShapes(recursive: true)
 		entity.setParent(content, preservingWorldTransform: false)
 		handAnchor.addChild(content)
-		entity.position = [0, 0.05, 0]
-		rotateSelected(entity)
+		entity.position = [0, 0.05, 0] + [0, selected.posY / 1000, selected.posZ / 1000]
+		rotateSelected(content)
 	}
 	
 	func removeSelected() {
